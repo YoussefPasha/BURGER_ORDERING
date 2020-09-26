@@ -5,7 +5,7 @@ const Burger = (props) => {
   let transformedIngredients = Object.keys(props.ingrediants)
     .map((igKey) => {
       return [...Array(props.ingrediants[igKey])].map((_, i) => {
-        return <BurgerIngredient key={igKey + 1} type={igKey} />;
+        return <BurgerIngredient key={Math.random()} type={igKey} />;
       });
     })
     .reduce((arr, el) => {
