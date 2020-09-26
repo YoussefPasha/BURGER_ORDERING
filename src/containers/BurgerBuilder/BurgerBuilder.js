@@ -2,11 +2,13 @@ import React, { Component } from "react";
 
 import Auxx from "../../hoc/Auxx";
 
+import Burger from "../../components/Burger/Burger";
+
 export class BurgerBuilder extends Component {
   render() {
     return (
       <Auxx>
-        <div> Burger</div>
+        <Burger />
         <div>Build Controls</div>
       </Auxx>
     );
