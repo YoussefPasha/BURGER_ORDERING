@@ -1,5 +1,6 @@
-import { object } from "prop-types";
 import React from "react";
+
+import Button from "../../UI/Button/Button";
 
 import Auxx from "../../../hoc/Auxx";
 
@@ -18,6 +19,12 @@ const OrderSummary = (props) => {
       <p>A delicious burger with the following ingredients: </p>
       <ul>{ingredientSummary}</ul>
       <p>Continue to Checkout? </p>
+      <Button btnType="Danger" clicked={props.purchaseCanceled}>
+        CANCEL
+      </Button>
+      <Button btnType="Success" clicked={props.purchaseContinueHandler}>
+        CONTINUE
+      </Button>
     </Auxx>
   );
 };
