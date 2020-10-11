@@ -5,7 +5,7 @@ import "./SideDrawer.css";
 const SideDrawer = () => {
   return (
     <div className="SideDrawer">
-      <Logo height="11%"/>
+      <Logo height="11%" margin-bottom="32px" />
       <nav>
         <NavigationItems />
       </nav>
