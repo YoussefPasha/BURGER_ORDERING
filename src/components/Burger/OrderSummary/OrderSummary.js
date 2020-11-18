@@ -1,35 +1,35 @@
 import React from "react";
 
+import Auxx from "../../../hoc/Auxx";
 import Button from "../../UI/Button/Button";
 
-import Auxx from "../../../hoc/Auxx";
-
-const OrderSummary = (props) => {
-  const ingredientSummary = Object.keys(props.ingrediants).map((igKey) => {
+const orderSummary = (props) => {
+  const ingredientSummary = Object.keys(props.ingredients).map((igKey) => {
     return (
       <li key={igKey}>
         <span style={{ textTransform: "capitalize" }}>{igKey}</span>:{" "}
-        {props.ingrediants[igKey]}
+        {props.ingredients[igKey]}
       </li>
     );
   });
+
   return (
     <Auxx>
-      <h3>Your Orders</h3>
-      <p>A delicious burger with the following ingredients: </p>
+      <h3>Your Order</h3>
+      <p>A delicious burger with the following ingredients:</p>
       <ul>{ingredientSummary}</ul>
       <p>
         <strong>Total Price: {props.price.toFixed(2)}</strong>
       </p>
-      <p>Continue to Checkout? </p>
-      <Button btnType="Danger" clicked={props.purchaseCanceled}>
+      <p>Continue to Checkout?</p>
+      <Button btnType="Danger" clicked={props.purchaseCancelled}>
         CANCEL
       </Button>
-      <Button btnType="Success" clicked={props.purchaseContinueHandler}>
+      <Button btnType="Success" clicked={props.purchaseContinued}>
         CONTINUE
       </Button>
     </Auxx>
   );
 };
 
-export default OrderSummary;
+export default orderSummary;

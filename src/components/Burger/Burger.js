@@ -1,26 +1,28 @@
-import React from "react";
-import "./Burger.css";
-import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
-const Burger = (props) => {
-  let transformedIngredients = Object.keys(props.ingrediants)
-    .map((igKey) => {
-      return [...Array(props.ingrediants[igKey])].map((_, i) => {
-        return <BurgerIngredient key={Math.random()} type={igKey} />;
-      });
-    })
-    .reduce((arr, el) => {
-      return arr.concat(el);
-    }, []);
-  if (transformedIngredients.length === 0) {
-    transformedIngredients = <p> Start Adding ? 🧀 + 🥩 + 🥗 </p>;
-  }
-  return (
-    <div className="Burger">
-      <BurgerIngredient type="bread-up" />
-      {transformedIngredients}
-      <BurgerIngredient type="bread-bottom" />
-    </div>
-  );
+import React from 'react';
+
+import './Burger.css';
+import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
+
+const burger = ( props ) => {
+    let transformedIngredients = Object.keys( props.ingredients )
+        .map( igKey => {
+            return [...Array( props.ingredients[igKey] )].map( ( _, i ) => {
+                return <BurgerIngredient key={igKey + i} type={igKey} />;
+            } );
+        } )
+        .reduce((arr, el) => {
+            return arr.concat(el)
+        }, []);
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding ingredients!</p>;
+    }
+    return (
+        <div className="Burger">
+            <BurgerIngredient type="bread-top" />
+            {transformedIngredients}
+            <BurgerIngredient type="bread-bottom" />
+        </div>
+    );
 };
 
-export default Burger;
+export default burger;

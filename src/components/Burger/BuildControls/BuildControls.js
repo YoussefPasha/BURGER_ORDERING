@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React from 'react';
 
-import "./BuildControls.css";
+import './BuildControls.css';
+import BuildControl from './BuildControl/BuildControl';
 
-import BuildControl from "../BuildControls/BuildControl/BuildControl";
 const controls = [
-  { label: "Salad", type: "salad" },
-  { label: "Bacon", type: "bacon" },
-  { label: "Cheese", type: "chesse" },
-  { label: "Meat", type: "meat" },
+    { label: 'Salad', type: 'salad' },
+    { label: 'Bacon', type: 'bacon' },
+    { label: 'Cheese', type: 'cheese' },
+    { label: 'Meat', type: 'meat' },
 ];
 
-const BuildControls = (props) => (
+const buildControls = (props) => (
   <div className="BuildControls">
     <p>
       Current Price: <strong>{props.price.toFixed(2)}</strong>
@@ -19,14 +19,14 @@ const BuildControls = (props) => (
       <BuildControl
         key={ctrl.label}
         label={ctrl.label}
-        added={() => props.ingrediantsAdded(ctrl.type)}
-        Removed={() => props.ingrediantsRemoved(ctrl.type)}
+        added={() => props.ingredientAdded(ctrl.type)}
+        removed={() => props.ingredientRemoved(ctrl.type)}
         disabled={props.disabled[ctrl.type]}
       />
     ))}
     <button
       className="OrderButton"
-      disabled={!props.purchaseable}
+      disabled={!props.purchasable}
       onClick={props.ordered}
     >
       ORDER NOW
@@ -34,4 +34,4 @@ const BuildControls = (props) => (
   </div>
 );
 
-export default BuildControls;
+export default buildControls;

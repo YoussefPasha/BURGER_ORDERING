@@ -1,9 +1,10 @@
 import React from "react";
-import Backdrop from "../Backdrop/Backdrop";
-import "./Modal.css";
-import Auxx from "../../../hoc/Auxx";
 
-const Modal = (props) => (
+import  "./Modal.css";
+import Auxx from "../../../hoc/Auxx";
+import Backdrop from "../Backdrop/Backdrop";
+
+const modal = (props) => (
   <Auxx>
     <Backdrop show={props.show} clicked={props.modalClosed} />
     <div
@@ -18,4 +19,4 @@ const Modal = (props) => (
   </Auxx>
 );
 
-export default Modal;
+export default modal;
