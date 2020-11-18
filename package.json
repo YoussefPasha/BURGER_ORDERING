@@ -1,5 +1,5 @@
 {
-  "name": "burgerorder",
+  "name": "burger_order",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
