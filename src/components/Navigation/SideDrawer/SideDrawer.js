@@ -16,9 +16,7 @@ const sideDrawer = (props) => {
       <Backdrop show={props.open} clicked={props.closed} />
       {/* #Youssef  */}
       <div className={`${attachedClasses[0]} ${attachedClasses[1]}`}>
-        <div className="Logo">
-          <Logo />
-        </div>
+        <Logo height="Side" />
         <nav>
           <NavigationItems />
         </nav>
